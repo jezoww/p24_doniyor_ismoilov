@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home menu</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{category}}" role="alert" style="text-align: center;">
+                       {{ message }}
+                    </div>
+
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    <div style="text-align: center;">
+        <h3>Home menu</h3>
+        <form action="/top_book">
+            <button>Top books</button>
+        </form>
+        <form action="/add_book">
+            <button>Add book</button>
+        </form>
+        <form action="/my_book">
+            <button>My books</button>
+        </form>
+        <form action="/update_book">
+            <button>Update book</button>
+        </form>
+        <form action="/delete">
+            <button>Delete book</button>
+        </form>
+        <form action="/log_out">
+            <button>Log out</button>
+        </form>
+    </div>
+</body>
+</html>

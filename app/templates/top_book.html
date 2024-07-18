@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top books</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h3>Top books</h3>
+        {% for book in books %}
+    <p>Id: {{book.id}}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Title: {{book.title}}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Author: {{book.author}}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Page count: {{book.page_count}}</p>
+    {% endfor %}
+    </div>
+    <form action="/home_menu" style="text-align: center;">
+        <button>Back</button>
+    </form>
+</body>
+</html>

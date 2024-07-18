@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My books</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h3>List of books</h3>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{category}}" role="alert" style="text-align: center;">
+                       {{ message }}
+                    </div>
+
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {% if books %}
+    {% for book in books %}
+    <p>Id: {{book.id}}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Title: {{book.title}}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Author: {{book.author}}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; Page count: {{book.page_count}}</p>
+    {% endfor %}
+    {% else %}
+    <p>You don't have any book</p>
+    {% endif %}
+    <form action="/home_menu" style="text-align: center;">
+        <button>Back</button>
+    </form>
+</div>
+</body>
+</html>

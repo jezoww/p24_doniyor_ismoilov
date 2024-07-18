@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+    <form method="post" style="text-align: center;">
+        <h3>Update book</h3>
+    <p>{{form.id.label}}: {{form.id}}</p>
+    {% if form.id.errors %}
+    {% for error in form.id.errors %}
+    {{error}}
+    {% endfor %}
+    {% endif %}
+    <br><br>
+
+    <p>{{form.title.label}}: {{form.title}}</p>
+    {% if form.title.errors %}
+    {% for error in form.title.errors %}
+    {{error}}
+    {% endfor %}
+    {% endif %}
+
+    <p>{{form.author.label}}: {{form.author}}</p>
+    {% if form.author.errors %}
+    {% for error in form.author.errors %}
+    {{error}}
+    {% endfor %}
+    {% endif %}
+
+    <p>{{form.page_count.label}}: {{form.page_count}}</p>
+    {% if form.page_count.errors %}
+    {% for error in form.page_count.errors %}
+    {{error}}
+    {% endfor %}
+    {% endif %}
+
+    {{form.submit()}}
+    {{form.hidden_tag()}}
+</form>
+<form action="/home_menu">
+    <button>Back</button>
+</form>
+</body>
+</html>
